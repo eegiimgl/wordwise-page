@@ -122,8 +122,8 @@ p {
 h1 {
   max-width: 720px;
   margin-bottom: 22px;
-  font-size: clamp(3rem, 8vw, 6.6rem);
-  line-height: 0.95;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 1.02;
   letter-spacing: 0;
 }
 
@@ -203,6 +203,18 @@ h3 {
 .app-preview {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hero-phone {
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
+}
+
+.hero-phone-second {
+  margin-top: 40px;
 }
 
 .phone-shell {
@@ -373,8 +385,104 @@ h3 {
 }
 
 .feature-grid p,
+.beta-panel p,
 .support-panel p {
   color: var(--muted);
+}
+
+.hero-note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.beta-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: clamp(24px, 5vw, 46px);
+  box-shadow: 0 20px 48px rgba(22, 52, 51, 0.08);
+}
+
+.beta-panel p {
+  max-width: 690px;
+}
+
+.beta-steps {
+  margin: 18px 0 0;
+  padding-left: 22px;
+  color: var(--muted);
+}
+
+.beta-steps li + li {
+  margin-top: 6px;
+}
+
+.beta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.qr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  padding: 22px;
+  text-align: center;
+}
+
+.qr-card img {
+  width: 220px;
+  height: 220px;
+  border-radius: 8px;
+}
+
+.qr-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.qr-link {
+  color: var(--teal-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+  word-break: break-all;
+  text-decoration: none;
+}
+
+.qr-link:hover,
+.qr-link:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+.screenshot-screen {
+  min-height: 0;
+  padding: 0;
+  aspect-ratio: 9 / 19.5;
+  background: #fff;
+}
+
+.screenshot-screen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 9 / 19.5;
+  object-fit: cover;
+  border-radius: 32px;
 }
 
 .support-panel {
@@ -495,6 +603,10 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .beta-panel {
+    grid-template-columns: 1fr;
+  }
+
   .support-actions {
     justify-content: flex-start;
   }
@@ -523,10 +635,11 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(2.6rem, 16vw, 4.4rem);
+    font-size: clamp(2rem, 10vw, 3rem);
   }
 
   .hero-actions,
+  .beta-actions,
   .support-actions {
     align-items: stretch;
     flex-direction: column;
@@ -539,6 +652,11 @@ h3 {
   .screen {
     min-height: 520px;
     padding: 20px;
+  }
+
+  .screenshot-screen {
+    min-height: 0;
+    padding: 0;
   }
 
   .about-grid,
